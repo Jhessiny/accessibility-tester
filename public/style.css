@@ -20,7 +20,13 @@ body {
   max-height: 100vh;
 }
 
-.header img {
+.header .img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.header .img img{
   width: 100%;
 }
 
@@ -68,7 +74,7 @@ body {
 }
 
 .issues {
-  padding: 40px;
+  padding: 50px 100px;
 }
 
 .card {
@@ -85,11 +91,12 @@ body {
 
 .card__content {
   background-color: #eee;
-  padding: 10px;
+  padding: 5px 10px;
+  margin-bottom: 15px;
 }
 
 .card__title {
-  background-color: #333;
+  background-color: rgb(42, 214, 157);
   color: #fff;
   padding: 5px 10px;
 }
@@ -97,5 +104,11 @@ body {
 @media only screen and (max-width: 1200px) {
   .header {
     grid-template-columns: 1fr;
+  }
+  .header .img img{
+    max-width: 700px;
+  }
+  .header__content {
+    justify-self: center;
   }
 }
