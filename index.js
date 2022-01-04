@@ -1,8 +1,19 @@
 const pa11y = require("pa11y");
+const express = require("express");
+const PORT = process.env.PORT || 5000;
 
-async function run() {
-  const response = await pa11y("https://traversy.dev");
-  console.log(response);
-}
+const app = express();
 
-run()
+app.use(express.static("public"));
+
+app.get("/api/test", async (req, res) => {
+  const { url } = req.query;
+  if (!url) {
+    res.status(400).json({ error: "url is required" });
+  } else {
+    const results = await pa11y(url);
+    res.status(200).json(results);
+  }
+});
+
+app.listen(PORT, () => console.log("server running on port " + PORT));

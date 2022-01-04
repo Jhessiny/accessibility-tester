@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accessibility tester</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="./js/main.js" defer></script>
   </head>
   <body>
-    <main class="header">
+    <header class="header">
       <div class="img">
         <img src="./img/4996398.jpg" alt="" />
       </div>
@@ -22,10 +23,20 @@
        </div>
         </p>
         <form action="" class="header__form">
-          <input type="text" placeholder="Your website url"/>
-          <button>Check</button>
+          <input type="text" placeholder="Your website url" type="url" id="url"/>
+          <button type="submit">Check</button>
         </form>
       </div>
-    </main>
+
+      
+    </header>
+    <div class="issues">
+
+      <div class="loader" id="loader">
+        loading...
+      </div>
+
+      <div class="issues__list" id="issues-list"></div>
+    </div>
   </body>
 </html>
